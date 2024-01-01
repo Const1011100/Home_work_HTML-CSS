@@ -7,6 +7,7 @@
 a {
     text-decoration: none;
 }
+
 a:hover {
     text-decoration: underline;
 }
@@ -29,6 +30,8 @@ button:hover {
 html,
 body {
     font-family: 'Rubik', sans-serif;
+    font-style: normal;
+    min-width: 375px;
 }
 
 .title {
@@ -53,8 +56,9 @@ body {
     padding: 0 15px;
     margin-right: auto;
     margin-left: auto;
-    border: 1px solid red;
+    /* border: 1px solid red; */
 }
+
 /* ========== header ========== */
 .header {
     background-color: #0A61F7;
@@ -67,16 +71,10 @@ body {
     align-items: center;
 }
 
-.logo {}
-
-.logo-img {}
-
 .menu {
     display: flex;
     gap: 24px;
 }
-
-.menu-item {}
 
 .menu-link {
     color: #FFF;
@@ -88,19 +86,18 @@ body {
     text-transform: uppercase;
 }
 
-/* ========== section 1 ========== */
-.main {}
+.menu__icon {
+    display: none;
+}
 
+/* ========== section 1 ========== */
 .main__wrapper {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 800px;
+    min-height: 800px;
 }
 
-.main__info {
-
-}
 .main-title {
     color: #363940;
     font-size: 58px;
@@ -130,6 +127,8 @@ body {
 
 .main-img {
     align-self: flex-end;
+    max-width: 656px;
+    width: 100%;
 }
 
 /* ========== section 2 ========== */
@@ -150,6 +149,7 @@ body {
 
 .rates-section .text {
     margin-bottom: 40px;
+    text-align: center;
 }
 
 .table {
@@ -225,16 +225,11 @@ td {
     margin-bottom: 40px;
     max-width: 500px;
 }
+
 .account__wrapper {
     display: flex;
     justify-content: space-between;
 }
-
-.account-info__wrapper {
-
-}
-
-.list {}
 
 .list-item {
     list-style-image: url(./assets/images/Check.svg);
@@ -242,6 +237,7 @@ td {
     margin-bottom: 15px;
     color: #363940;
 }
+
 form {
     width: 100%;
     max-width: 500px;
@@ -337,4 +333,82 @@ small {
     font-weight: 400;
     line-height: 22px;
     color: #FFF;
+}
+
+
+/* ========== Адаптив 768px - 1400px ========== */
+@media screen and (max-width: 1400px) {
+    .main__wrapper {
+        flex-direction: column;
+        min-height: auto;
+    }
+
+    .main__info {
+        align-self: flex-start;
+    }
+
+    .main-image {
+        align-self: center;
+    }
+
+    .main__info {
+        align-self: flex-start;
+        margin: 100px 0 80px;
+    }
+
+    .table {
+        width: 940px;
+    }
+
+    .table__wrapper {
+        overflow-x: auto;
+        width: 100%;
+        max-width: 940px;
+    }
+
+    .account__wrapper {
+        flex-direction: column;
+        gap: 70px;
+    }
+
+    .create-account-secton .text {
+        max-width: unset;
+    }
+
+    form {
+        align-self: center;
+    }
+}
+
+/* ========== Адаптив 375px - 576px ========== */
+@media screen and (max-width: 576px) {
+    .menu {
+        display: none;
+    }
+
+    .menu__icon {
+        display: block;
+    }
+
+    .main__info {
+        margin: 60px 0;
+    }
+
+    .main-title {
+        font-size: 52px;
+        line-height: 60px;
+    }
+
+    .account__wrapper {
+        gap: 60px;
+    }
+
+    label {
+        white-space: nowrap;
+    }
+
+    fieldset {
+        flex-wrap: wrap;
+        row-gap: 20px;
+    }
 }
